@@ -32,11 +32,11 @@ public class OrderDTO {
 	}
 	
 	public OrderDTO(Order entity) {
-		this.id = entity.getId();
-		this.moment = entity.getMoment();
-		this.status = entity.getStatus();
-		this.client = new ClientDTO(entity.getClient());
-		this.payment = (entity.getPayment() == null) ? null : new PaymentDTO(entity.getPayment());
+		id = entity.getId();
+		moment = entity.getMoment();
+		status = entity.getStatus();
+		client = new ClientDTO(entity.getClient());
+		payment = (entity.getPayment() == null) ? null : new PaymentDTO(entity.getPayment());
 		for (OrderItem item : entity.getItems()) {
 			OrderItemDTO itemDto = new OrderItemDTO(item);
 			items.add(itemDto);
